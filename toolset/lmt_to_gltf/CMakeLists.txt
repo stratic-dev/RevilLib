@@ -20,10 +20,6 @@ build_target(
   START_YEAR
   2022)
 
-if(${CMAKE_CXX_COMPILER_ID} MATCHES "Clang")
-  target_compile_options(lmt_to_gltf PRIVATE -frelaxed-template-template-args)
-endif()
-
 project(LMT2JSON)
 
 build_target(
