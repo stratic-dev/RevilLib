@@ -115,6 +115,13 @@ struct ArcMakeContext : AppPackContext {
           if (hash) {
             printwarning("Skipped (multiple classes from extension): " << path 
                      << " | Hash count: " << hashes.size());
+
+
+
+            // Print out each hash in the collection
+          for (const auto &hash_val : hashes) {
+            printwarning("Hash: " << hash_val << " | Extension: " << extension);
+          }
             return;
           }
 
