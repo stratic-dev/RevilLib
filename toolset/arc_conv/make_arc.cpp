@@ -113,7 +113,8 @@ struct ArcMakeContext : AppPackContext {
         if (revil::GetExtension(h, settings.title, settings.platform) ==
             extension) {
           if (hash) {
-            printwarning("Skipped (multiple classes from extension): " << path);
+            printwarning("Skipped (multiple classes from extension): " << path 
+                     << " | Hash count: " << hashes.size());
             return;
           }
 
