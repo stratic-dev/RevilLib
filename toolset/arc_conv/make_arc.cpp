@@ -113,6 +113,7 @@ struct ArcMakeContext : AppPackContext {
         if (revil::GetExtension(h, settings.title, settings.platform) ==
             extension) {
           if (hash) {
+           
             printwarning("Skipped (multiple classes from extension): " << path 
                      << " | Hash count: " << hashes.size());
 
@@ -120,7 +121,7 @@ struct ArcMakeContext : AppPackContext {
 
             // Print out each hash in the collection
           for (const auto &hash_val : hashes) {
-            printwarning("Hash: " << hash_val << " | Extension: " << extension);
+            printwarning("Hash: " << hash_val << " | Extension: " << extension << " | Class: " << GetClassName(hash_val));
           }
             return;
           }
