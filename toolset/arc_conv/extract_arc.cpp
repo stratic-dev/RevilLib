@@ -228,6 +228,7 @@ void AppProcessFile(AppContext *ctx) {
     if (ectx->RequiresFolders()) {
       for (auto &f : files) {
         AFileInfo inf(f.fileName);
+        printwarning("filename: " << f.filename << " | size: " << f.filename.size());
         const std::string cFolder(inf.GetFolder());
         ectx->AddFolderPath(cFolder);
       }
