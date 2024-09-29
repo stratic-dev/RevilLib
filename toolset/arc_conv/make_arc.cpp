@@ -135,12 +135,12 @@ struct ArcMakeContext : AppPackContext {
 
     auto noExt = path.substr(0, extPos);
 
-    if (noExt.size() > ((ts->arc.flags & revil::DbArc_ExtendedPath)
-                            ? sizeof(ARCExtendedFile::fileName)
-                            : sizeof(ARCFile::fileName))) {
-      printwarning("Skipped (filename too large): " << path);
-      return;
-    }
+    // if (noExt.size() > ((ts->arc.flags & revil::DbArc_ExtendedPath)
+    //                         ? sizeof(ARCExtendedFile::fileName)
+    //                         : sizeof(ARCFile::fileName))) {
+    //   printwarning("Skipped (filename too large): " << path);
+    //   return;
+    // }
 
     numFiles++;
 
