@@ -228,7 +228,6 @@ void AppProcessFile(AppContext *ctx) {
     if (ectx->RequiresFolders()) {
       for (auto &f : files) {
         AFileInfo inf(f.fileName);
-        printwarning("filename: " << f.filename << " | size: " << f.filename.size());
         const std::string cFolder(inf.GetFolder());
         ectx->AddFolderPath(cFolder);
       }
@@ -309,6 +308,7 @@ void AppProcessFile(AppContext *ctx) {
 
       auto ext = revil::GetExtension(f.typeHash, settings.title, platform);
       std::string filePath = f.fileName;
+      printwarning("filename: " << filePath)
       filePath.push_back('.');
 
       if (ext.empty()) {
