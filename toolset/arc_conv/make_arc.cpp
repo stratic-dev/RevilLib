@@ -132,7 +132,7 @@ struct ArcMakeContext : AppPackContext {
     } else {
       hash = hashes.front();
     }
-
+    printwarning("filename: " << path)
     auto noExt = path.substr(0, extPos);
 
     if (noExt.size() > ((ts->arc.flags & revil::DbArc_ExtendedPath)
