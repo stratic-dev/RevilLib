@@ -107,7 +107,10 @@ struct ArcMakeContext : AppPackContext {
     }
 
     uint32 hash = 0;
-
+    hashes.erase(std::remove_if(hashes.begin(), hashes.end(), 
+                            [](const auto &h) { return h == 0; }), 
+             hashes.end());
+             
     if (hashes.size() > 1) {
       for (auto &h : hashes) {
         if (revil::GetExtension(h, settings.title, settings.platform) ==
